@@ -1,12 +1,8 @@
-package org.example;
-
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
 import java.util.List;
 
 public class TestFourteen {
@@ -25,6 +21,7 @@ public class TestFourteen {
         driver.findElement(By.xpath("/html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[1]/div[2]/form[1]/div[2]/input")).sendKeys("50");
         driver.findElement(By.cssSelector("#pay-connection > button")).click();
     }
+
     @Test
     public void verifyTitle() {
         WebElement blockTitle = driver.findElement(By.xpath("/html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/h2"));
@@ -32,10 +29,12 @@ public class TestFourteen {
                 "без комиссии";
         Assertions.assertEquals(blockTitle.getText(), expectedTitle);
     }
+
     @Test
     public void verifyLogos() {
         List<WebElement> logos = driver.findElements(By.xpath("/html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[2]"));
-        Assertions.assertTrue(!logos.isEmpty());}
+        Assertions.assertTrue(!logos.isEmpty());
+    }
 
     @Test
     public void verifyLink() {
@@ -47,7 +46,7 @@ public class TestFourteen {
     }
 
     @AfterAll
-    public static void terminateBrowser(){
+    public static void terminateBrowser() {
         driver.close();
     }
 }
