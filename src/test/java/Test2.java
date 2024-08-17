@@ -24,7 +24,6 @@ public class Test2 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get(ConfProperties.getProperty("page"));
-        //paymentBlock.clickCooky();
         paymentBlock.inputPhoneNumber(ConfProperties.getProperty("phone"));
         paymentBlock.inputSum(ConfProperties.getProperty("sum"));
         paymentBlock.clickPaymentBtn();

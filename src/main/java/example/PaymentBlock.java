@@ -146,10 +146,6 @@ public class PaymentBlock {
         paymentBtn.click();
     }
 
-    public void clickCooky() {
-        cooky.click();
-    }
-
     public String checkPlaceholderPhone() {
         String placeholderPhone = phoneField.getAttribute("placeholder");
         return placeholderPhone;
