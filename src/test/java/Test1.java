@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class Test1 {
@@ -15,18 +16,19 @@ public class Test1 {
     @BeforeClass
     public static void setup() {
         driver = new ChromeDriver();
-        paymentBlock = new PaymentBlock (driver);
+        paymentBlock = new PaymentBlock(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(ConfProperties.getProperty("page"));
-        paymentBlock.clickCooky();}
+        paymentBlock.clickCooky();
+    }
 
     //Услуги связи
     //Поле номер телефона
     @Test
     public void checkingPlaceHolderPhoneTest() {
         String actualPlaceholderPhone = paymentBlock.checkPlaceholderPhone();
-        Assert.assertEquals(ConfProperties.getProperty("phonePlaceholder"),actualPlaceholderPhone);
+        Assert.assertEquals(ConfProperties.getProperty("phonePlaceholder"), actualPlaceholderPhone);
     }
 
     //Поле сумма
@@ -48,21 +50,21 @@ public class Test1 {
     @Test
     public void checkingPlaceHolderNumberNumber() {
         String actualPlaceholderNumberSubscriber = paymentBlock.checkPlaceholderNumberSubscriber();
-        Assert.assertEquals(ConfProperties.getProperty("subscriberNumberPlaceholder"),actualPlaceholderNumberSubscriber);
+        Assert.assertEquals(ConfProperties.getProperty("subscriberNumberPlaceholder"), actualPlaceholderNumberSubscriber);
     }
 
     //Поле сумма
     @Test
     public void checkingPlaceHolderSumHomeInternet() {
         String actualPlaceholderSumHomeInternet = paymentBlock.checkPlaceholderSumHomeInternet();
-        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"),actualPlaceholderSumHomeInternet);
+        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"), actualPlaceholderSumHomeInternet);
     }
 
     //Поле e-mail
     @Test
     public void checkingPlaceHolderEmailHomeInternet() {
         String actualPlaceholderEmailHomeInternet = paymentBlock.checkPlaceholderEmailHomeInternet();
-        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"),actualPlaceholderEmailHomeInternet);
+        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"), actualPlaceholderEmailHomeInternet);
     }
 
     //Рассрочка
@@ -70,21 +72,21 @@ public class Test1 {
     @Test
     public void checkingPlaceHolderAccountNumber() {
         String actualPlaceholderAccountNumber = paymentBlock.checkPlaceholderNumberAccount();
-        Assert.assertEquals(ConfProperties.getProperty("accountNumberPlaceholder"),actualPlaceholderAccountNumber);
+        Assert.assertEquals(ConfProperties.getProperty("accountNumberPlaceholder"), actualPlaceholderAccountNumber);
     }
 
     //Поле сумма
     @Test
     public void checkingPlaceHolderSumInstalment() {
         String actualPlaceholderSumInstalment = paymentBlock.checkPlaceholderSumInstalment();
-        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"),actualPlaceholderSumInstalment);
+        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"), actualPlaceholderSumInstalment);
     }
 
     //Поле e-mail
     @Test
     public void checkingPlaceHolderEmailInstalment() {
         String actualPlaceholderEmailInstalment = paymentBlock.checkPlaceholderEmailInstalment();
-        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"),actualPlaceholderEmailInstalment);
+        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"), actualPlaceholderEmailInstalment);
     }
 
     //Задолженность
@@ -92,27 +94,27 @@ public class Test1 {
     @Test
     public void checkingPlaceHolderNumberAccountArrears() {
         String actualPlaceHolderNumberAccountArrears = paymentBlock.checkPlaceholderNumberAccountArrears();
-        Assert.assertEquals(ConfProperties.getProperty("accountNumberArrearsPlaceholder"),actualPlaceHolderNumberAccountArrears);
+        Assert.assertEquals(ConfProperties.getProperty("accountNumberArrearsPlaceholder"), actualPlaceHolderNumberAccountArrears);
     }
 
     //Поле сумма
     @Test
     public void checkingPlaceHolderSumArrears() {
         String actualPlaceholderSumArrears = paymentBlock.checkPlaceholderSumArrears();
-        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"),actualPlaceholderSumArrears);
+        Assert.assertEquals(ConfProperties.getProperty("sumPlaceholder"), actualPlaceholderSumArrears);
     }
 
     //Поле e-mail
     @Test
     public void checkingPlaceHolderEmailArrears() {
         String actualPlaceholderEmailArrears = paymentBlock.checkPlaceholderEmailArrears();
-        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"),actualPlaceholderEmailArrears);
+        Assert.assertEquals(ConfProperties.getProperty("emailPlaceholder"), actualPlaceholderEmailArrears);
     }
-
 
     @AfterClass
     public static void tearDown() {
-        driver.quit(); }
+        driver.quit();
+    }
 }
 
 

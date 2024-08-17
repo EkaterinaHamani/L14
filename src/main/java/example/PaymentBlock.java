@@ -1,4 +1,5 @@
 package example;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,14 +10,16 @@ import java.util.List;
 public class PaymentBlock {
 
     public WebDriver driver;
+
     public PaymentBlock(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver = driver; }
+        this.driver = driver;
+    }
 
     @FindBy(xpath = "//*[contains(@id, 'connection-phone')]")
     private WebElement phoneField;
 
-    @FindBy(xpath ="//*[@id=\"pay-connection\"]/button")
+    @FindBy(xpath = "//*[@id=\"pay-connection\"]/button")
     private WebElement paymentBtn;
 
     @FindBy(xpath = "//*[contains(@id, 'connection-sum')]")
@@ -89,100 +92,123 @@ public class PaymentBlock {
     private WebElement numberPhoneMarked;
 
     @FindBy(xpath = "/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/app-card-input/form/div[1]/div[1]/app-input/div/div/div[2]/div/div")
-    private List <WebElement> icons;
+    private List<WebElement> icons;
 
     public String getFildCardContent() {
         String fildCardContent = numberCard.getText();
-        return fildCardContent; }
+        return fildCardContent;
+    }
 
     public String getFildValidityPeriodContent() {
         String fildValidityPeriodContent = validityPeriod.getText();
-        return fildValidityPeriodContent; }
+        return fildValidityPeriodContent;
+    }
 
     public String getFildCvcContent() {
         String fildCvcContent = cvc.getText();
-        return fildCvcContent; }
+        return fildCvcContent;
+    }
 
     public String getFildHoldersNameContent() {
         String fildHoldersNameContent = holdersName.getText();
-        return fildHoldersNameContent; }
+        return fildHoldersNameContent;
+    }
 
     public String getSumUpContent() {
         String sumUpContent = sumUp.getText();
-        return sumUpContent; }
+        return sumUpContent;
+    }
 
     public String getSumDownContent() {
         String sumDownContent = sumDown.getText();
-        return sumDownContent; }
+        return sumDownContent;
+    }
 
     public String getNumberPhoneMarkedContent() {
         String PhoneMarkedContentContent = numberPhoneMarked.getText();
-        return PhoneMarkedContentContent; }
+        return PhoneMarkedContentContent;
+    }
 
     public List<WebElement> getIconsContent() {
         List<WebElement> iconsContent = icons;
-        return iconsContent; }
+        return iconsContent;
+    }
 
     public void inputPhoneNumber(String phone) {
-        phoneField.sendKeys(phone); }
+        phoneField.sendKeys(phone);
+    }
 
     public void inputSum(String sum) {
-        sumField.sendKeys(sum); }
+        sumField.sendKeys(sum);
+    }
 
     public void clickPaymentBtn() {
         paymentBtn.click();
     }
+
     public void clickCooky() {
         cooky.click();
     }
 
     public String checkPlaceholderPhone() {
         String placeholderPhone = phoneField.getAttribute("placeholder");
-        return placeholderPhone; }
+        return placeholderPhone;
+    }
 
     public String checkPlaceholderSum() {
         String placeholderSum = sumField.getAttribute("placeholder");
-        return placeholderSum; }
+        return placeholderSum;
+    }
 
     public String checkPlaceholderEmail() {
         String placeholderEmail = emailField.getAttribute("placeholder");
-        return placeholderEmail; }
+        return placeholderEmail;
+    }
 
     public String checkPlaceholderNumberSubscriber() {
         String placeholderNumberSubscriber = numberSubscriberField.getAttribute("placeholder");
-        return placeholderNumberSubscriber; }
+        return placeholderNumberSubscriber;
+    }
 
     public String checkPlaceholderSumHomeInternet() {
         String placeholderSumHomeInternet = sumHomeInternetField.getAttribute("placeholder");
-        return placeholderSumHomeInternet; }
+        return placeholderSumHomeInternet;
+    }
 
     public String checkPlaceholderEmailHomeInternet() {
         String placeholderEmailHomeInternet = emailHomeInternetField.getAttribute("placeholder");
-        return placeholderEmailHomeInternet; }
+        return placeholderEmailHomeInternet;
+    }
 
     public String checkPlaceholderNumberAccount() {
         String placeholderNumberAccount = accountNumberField.getAttribute("placeholder");
-        return placeholderNumberAccount; }
+        return placeholderNumberAccount;
+    }
 
     public String checkPlaceholderSumInstalment() {
         String placeholderSumHomeInstalment = sumInstalmentField.getAttribute("placeholder");
-        return placeholderSumHomeInstalment; }
+        return placeholderSumHomeInstalment;
+    }
 
     public String checkPlaceholderEmailInstalment() {
         String placeholderEmailInstalment = emailInstalmentField.getAttribute("placeholder");
-        return placeholderEmailInstalment; }
+        return placeholderEmailInstalment;
+    }
 
     public String checkPlaceholderNumberAccountArrears() {
         String placeholderNumberAccountArrears = accountNumberArrearsField.getAttribute("placeholder");
-        return placeholderNumberAccountArrears; }
+        return placeholderNumberAccountArrears;
+    }
 
     public String checkPlaceholderSumArrears() {
         String placeholderSumArrears = sumArrearsField.getAttribute("placeholder");
-        return placeholderSumArrears; }
+        return placeholderSumArrears;
+    }
 
     public String checkPlaceholderEmailArrears() {
         String placeholderEmailArrears = emailArrearsField.getAttribute("placeholder");
-        return placeholderEmailArrears; }
+        return placeholderEmailArrears;
     }
+}
 
 
